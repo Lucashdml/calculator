@@ -1,20 +1,29 @@
-let firstNumber = 0;
-let operator = 0;
-let secondNumber = 0;
+let displayValue = 0;
+let firstNumber = null;
+let operator = null;
+let secondNumber = null;
 
-function operate(operator,num1,num2) {
+function updateDisplay() {
+  const display = document.querySelector(".display");
+  display.innerText = displayValue;
+  if (displayValue.length > 9) {
+    display.innerText = displayValue.substring(0, 9);
+  }
+}
+
+function operate(operator, num1, num2) {
   switch (operator) {
-    case '+':
-    return add(num1, num2);
-    case '-':
-    return subtract(num1, num2);
-    case '*':
-    return multiply(num1, num2);
-    case '/':
-    return divide(num1, num2);
-  default:
-    return "Invalid operator";
-  } 
+    case "+":
+      return add(num1, num2);
+    case "-":
+      return subtract(num1, num2);
+    case "*":
+      return multiply(num1, num2);
+    case "/":
+      return divide(num1, num2);
+    default:
+      return "Invalid operator";
+  }
 }
 
 function add(a, b) {
