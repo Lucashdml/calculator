@@ -1,45 +1,11 @@
-let displayValue = 0;
-let firstNumber = null;
-let operator = null;
-let secondNumber = null;
+document.addEventListener("DOMContentLoaded",function(){
+  let clear = document.querySelector(".clear");
+  let equal = document.querySelector(".equals");
+  let decimal = document.querySelector(".decimal");
 
-function updateDisplay() {
-  const display = document.querySelector(".display");
-  display.innerText = displayValue;
-  if (displayValue.length > 9) {
-    display.innerText = displayValue.substring(0, 9);
-  }
-}
+  let numbers = document.querySelectorAll(".number");
+  let operators = document.querySelectorAll(".operator");
 
-updateDisplay();
-
-function operate(operator, num1, num2) {
-  switch (operator) {
-    case "+":
-      return add(num1, num2);
-    case "-":
-      return subtract(num1, num2);
-    case "*":
-      return multiply(num1, num2);
-    case "/":
-      return divide(num1, num2);
-    default:
-      return "Invalid operator";
-  }
-}
-
-function add(a, b) {
-  return a + b;
-}
-
-function subtract(a, b) {
-  return a - b;
-}
-
-function multiply(a, b) {
-  return a * b;
-}
-
-function divide(a, b) {
-  return a / b;
-}
+  let previousScreen = document.querySelector(".previous");
+  let currentScreen = document.querySelector(".current");
+})

@@ -82,6 +82,10 @@ body {
   border: 1px solid #fb4934;
   height: 75px;
   margin: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .previous {
