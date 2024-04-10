@@ -28,17 +28,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }),
   );
 
-  clear.addEventListener("click", function() {
-    previousValue = '';
-    currentValue = '';
-    operator = '';
+  clear.addEventListener("click", function () {
+    previousValue = "";
+    currentValue = "";
+    operator = "";
     previousScreen.textContent = currentValue;
     currentScreen.textContent = currentValue;
-  })
+  });
 
-  equal.addEventListener("click", function() {
-    calculate()
-  })
+  equal.addEventListener("click", function () {
+    if (currentValue != "" && previousValue != "") {
+      calculate();
+      previousScreen.textContent = "";
+      if (previousValue.length <= 5) {
+        currentScreen.textContent = previousValue;
+      } else {
+        currentScreen.textContent = previousValue.slice(0, 5) + "...";
+      }
+    }
+  });
 });
 
 function handleNumber(num) {
@@ -50,22 +58,26 @@ function handleNumber(num) {
 function handleOperator(op) {
   operator = op;
   previousValue = currentValue;
-  currentValue = '';
+  currentValue = "";
 }
 
 function calculate() {
-  previousValue = Number(previousValue); 
-  currentValue = Number(currentValue); 
+  previousValue = Number(previousValue);
+  currentValue = Number(currentValue);
 
-  if(operator === "+") {
+  if (operator === "+") {
     previousValue += currentValue;
-  } else if(operator === "-") {
+  } else if (operator === "-") {
     previousValue -= currentValue;
-  } else if(operator === "*") {
+  } else if (operator === "*") {
     previousValue *= currentValue;
   } else {
     previousValue /= currentValue;
   }
+
+  previousValue = roundNumber(previousValue);
+  previousValue = previousValue.toString();
+  currentValue = previousValue.toString();
 }
 
 function roundNumber(num) {
