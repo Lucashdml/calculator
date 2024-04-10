@@ -47,6 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
+  decimal.addEventListener("click", function() {
+    addDecimal();
+  })
 });
 
 function handleNumber(num) {
@@ -82,4 +86,10 @@ function calculate() {
 
 function roundNumber(num) {
   return Math.round(num * 1000) / 1000;
+}
+
+function addDecimal() {
+  if(!currentValue.includes('.')) {
+    currentValue += '.';
+  }
 }
