@@ -6,3 +6,51 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+.btn {
+  height: 65px;
+  width: 65px;
+  margin: 6px;
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.btn.number:hover {
+  background-color: #b8bb26;
+}
+.btn.number {
+  border: 3px solid #f67c18;
+  border-radius: 8px;
+}
+
+.btn.operator:hover {
+  background-color: violet;
+}
+.btn.operator {
+  border: 3px solid blueviolet;
+  border-radius: 8px;
+}
+
+.btn.equals:hover {
+  background-color: greenyellow;
+}
+.btn.equals {
+  border: 3px solid #b8bb26;
+  border-radius: 8px;
+}
+
+.btn.decimal:hover {
+  background-color: cyan;
+}
+.btn.decimal {
+  border: 3px solid #a6e3a1;
+  border-radius: 8px;
+}
+
+.btn.clear:hover {
+  background-color: red;
+}
+.btn.clear {
+  border: 3px solid #fb4934;
+  border-radius: 8px;
+}
