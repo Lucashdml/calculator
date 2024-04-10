@@ -1,6 +1,6 @@
-const firstNumber = 0;
-const operator = 0;
-const secondNumber = 0;
+let firstNumber = 0;
+let operator = 0;
+let secondNumber = 0;
 
 function operate(operator,num1,num2) {
   switch (operator) {
